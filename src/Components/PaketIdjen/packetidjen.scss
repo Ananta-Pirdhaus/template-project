@@ -1,0 +1,187 @@
+:root {
+  --primaryColor: hsl(199, 100%, 33%);
+  --secondaryColor: hsl(187, 85%, 43%);
+  --gradientColor: linear-gradient(
+    to right,
+    hsl(187, 85%, 43%),
+    hsl(199, 100%, 33%)
+  );
+  --whiteColor: hsl(0, 0%, 100%);
+  --blackColor: hsl(201, 33%, 16%);
+  --textColor: hsl(240, 4%, 36%);
+  --whiteColorDeam: hsl(0, 0%, 93%);
+  --greyText: rgb(190, 190, 190);
+  --inputColor: rgb(239, 239, 239);
+  --bodyColor: rgb(240, 240, 246);
+  --cardBG: rgb(225, 225, 235);
+  --cardHover: rgba(255, 255, 255, 0.9);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--bodyColor);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section {
+  padding: 40px 0;
+}
+
+.secTitle {
+  text-align: center;
+  margin-bottom: 1rem;
+
+  .title {
+    font-size: 3.5rem;
+    color: var(--textColor);
+  }
+}
+
+.secContent {
+  display: grid;
+  gap: 1.5rem;
+
+  .singleDestination {
+    border-radius: 10px;
+    background: var(--cardBG);
+    box-shadow: 0 2px 4px rgba(140, 140, 141, 0.549);
+    overflow: hidden;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      background: var(--cardHover);
+      box-shadow: 1px 4px 4px rgba(140, 140, 141, 0.549);
+    }
+
+    .imageDiv {
+      height: 350px;
+      border-radius: 10px;
+      overflow: hidden;
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        transition: transform 2s ease;
+      }
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  .cardInfo {
+    padding: 1rem;
+
+    .destTitle {
+      font-size: 1.25rem;
+      color: var(--blackColor);
+    }
+
+    .continent {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+      .icon {
+        color: var(--textColor);
+        font-size: 25px;
+      }
+
+      .name {
+        color: var(--textColor);
+        font-weight: 400;
+        font-size: 20px;
+      }
+    }
+
+    .fees {
+      display: flex;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-top: 1.5px solid var(--greyText);
+      border-bottom: 1.5px solid var(--greyText);
+
+      .grade {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        align-items: center;
+        gap: 2rem;
+        
+        img {
+          height: 20px;
+          width: 20px;
+        }
+        
+        span {
+          font-size: 16px;
+          color: var(--textColor);
+          margin-left: .5rem;
+        }
+      }
+    }
+
+    .price {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 1rem 0;
+      border-bottom: 1.5px solid var(--greyText);
+
+      h5 {
+        font-size: 1rem;
+        color: var(--blackColor);
+      }
+    }
+  }
+
+  .desc {
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--textColor);
+    margin: 1rem 1rem;
+  }
+}
+
+@media screen and (max-width: 865px) {
+  .secTitle {
+    margin-top: rem;
+
+    .title {
+      font-size: 2.5rem;
+    }
+  }
+
+  .secContent {
+    padding: 2rem;
+    grid-template-columns: 1fr;
+  }
+
+  .grade {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+
+    img {
+      height: 20px;
+      width: 20px;
+    }
+
+    span {
+      font-size: 14px;
+    }
+  }
+
+  .desc {
+    margin: 1rem 0;
+  }
+}
